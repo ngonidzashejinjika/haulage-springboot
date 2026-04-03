@@ -26,11 +26,7 @@ public class TruckController {
     public ResponseEntity<TruckResponse> create(@Valid @RequestBody TruckCreateRequest request) {
         Truck truck = truckService.createTruck(request.getRegistrationNumber(), request.getCapacity());
         if (request.getStatus() != null) {
-            truck = truckService.updateTruck(
-                    truck.getTruckId(),
-                    truck.getRegistrationNumber(),
-                    truck.getCapacity(),
-                    request.getStatus());
+            truck = truckService.setTruckStatus(truck.getTruckId(), request.getStatus());
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(toResponse(truck));
     }

@@ -31,9 +31,9 @@ public class JwtService {
         Date expiry = new Date(now.getTime() + expirationMs);
 
         return Jwts.builder()
-                .setSubject(userDetails.getUsername())
-                .setIssuedAt(now)
-                .setExpiration(expiry)
+                .subject(userDetails.getUsername())
+                .issuedAt(now)
+                .expiration(expiry)
                 .signWith(signingKey)
                 .compact();
     }

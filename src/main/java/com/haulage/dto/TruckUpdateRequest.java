@@ -1,6 +1,5 @@
 package com.haulage.dto;
 
-import com.haulage.domain.enums.TruckStatus;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -32,6 +31,6 @@ public class TruckUpdateRequest {
     }
 
     public void setCapacity(BigDecimal capacity) {
-        this.capacity = this.capacity;
+        this.capacity = capacity;
     }
 }
